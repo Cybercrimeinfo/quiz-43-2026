@@ -1,0 +1,248 @@
+<!doctype html>
+<!-- v1.2.0 | 25 okt 2026 -->
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cybercrimeinfo Quiz - Week 43-2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap');
+:root{--bg:#0a0e17;--surface:#111827;--hover:#1a2234;--border:#1e293b;--accent:#f59e0b;--good:#10b981;--bad:#ef4444;--text:#e2e8f0;--dim:#94a3b8;--muted:#64748b}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:Outfit,sans-serif;line-height:1.6;min-height:100vh}.container{margin:auto;max-width:800px;padding:2rem 1.5rem}header{text-align:center;border-bottom:1px solid var(--border);margin-bottom:2rem;padding-bottom:2rem}.badge{display:inline-block;background:#f59e0b18;border:1px solid #f59e0b55;border-radius:99px;color:var(--accent);font:700 .75rem 'JetBrains Mono';letter-spacing:.05em;margin-bottom:1rem;padding:.35rem 1rem;text-transform:uppercase}h1{color:var(--accent);font-size:2rem}header p{color:var(--dim);margin-top:.45rem}.progress{background:var(--border);border-radius:3px;height:5px;margin-bottom:1.25rem;overflow:hidden}.progress span{background:var(--accent);display:block;height:100%;transition:width .3s;width:0}.score{text-align:center;color:var(--muted);font:.85rem 'JetBrains Mono';margin-bottom:1.5rem}.score b{color:var(--accent)}.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:1.25rem;padding:1.7rem}.card.good{border-color:var(--good)}.card.bad{border-color:var(--bad)}.number{color:var(--muted);font:.7rem 'JetBrains Mono';letter-spacing:.1em;text-transform:uppercase}.question{font-size:1.08rem;font-weight:600;margin:.65rem 0 1.2rem}.options{display:grid;gap:.6rem}.option{width:100%;text-align:left;font:inherit;align-items:center;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);cursor:pointer;display:flex;gap:.8rem;padding:.8rem 1rem}.option:hover:not(.disabled){background:var(--hover);border-color:var(--accent)}.letter{flex-shrink:0;align-items:center;border:1px solid var(--border);border-radius:4px;color:var(--text);display:flex;font:700 .75rem 'JetBrains Mono';height:24px;justify-content:center;width:24px}.option:focus-visible,.restart:focus-visible{outline:3px solid #7dd3fc;outline-offset:3px}.option.disabled{cursor:default;opacity:.62}.option.correct,.option.wrong{opacity:1}.option.correct{background:#10b98116;border-color:var(--good)}.option.correct .letter{background:var(--good);color:var(--bg)}.option.wrong{background:#ef444416;border-color:var(--bad)}.option.wrong .letter{background:var(--bad);color:var(--bg)}.feedback{border-radius:8px;display:none;font-size:.9rem;margin-top:1rem;padding:.8rem 1rem}.feedback.show{display:block}.feedback.good{background:#10b98116;color:var(--good)}.feedback.bad{background:#ef444416;color:var(--bad)}.results{background:var(--surface);border:1px solid var(--accent);border-radius:12px;display:none;padding:2.5rem 2rem;text-align:center}.results.show{display:block}.final{color:var(--accent);font:700 3rem 'JetBrains Mono';margin:1rem}.restart{background:var(--accent);border:0;border-radius:8px;color:var(--bg);cursor:pointer;font:600 1rem Outfit;padding:.8rem 1.8rem;margin-top:1.25rem}footer{border-top:1px solid var(--border);color:var(--muted);font-size:.8rem;margin-top:2rem;padding:2rem 0;text-align:center}footer a{color:var(--accent)}@media(max-width:600px){.container{padding:1rem}.card{padding:1.2rem}h1{font-size:1.55rem}}
+</style>
+</head>
+<body><main class="container">
+<header><div class="badge">Week 43 &bull; 2026</div><h1>Cybercrime Quiz</h1><p>Weekoverzicht van 17 tot en met 23 oktober 2026</p><p>Websites die uit voorzorg offline gingen door lekken in PHP, een lek in Belgische routers en een nieuwe vorm van bankhelpdeskfraude. Wat weet jij nog van het cybercrimenieuws van deze week? Test je kennis in twintig vragen, met uitleg na elk antwoord.</p></header>
+<div class="progress" role="progressbar" aria-label="Beantwoorde vragen" aria-valuemin="0" aria-valuemax="20" aria-valuenow="0"><span id="progress"></span></div><div class="score">Score: <b id="score">0</b> / <b id="answered">0</b></div><section id="quiz"></section>
+<section class="results" id="results"><h2>Quiz voltooid!</h2><div class="final" id="final"></div><p id="message"></p><button class="restart" onclick="restartQuiz()">Opnieuw spelen</button></section>
+</main><footer>Cybercrimeinfo Quiz WK43-2026 &bull; <a href="https://www.ccinfo.nl">ccinfo.nl</a> &bull; 25 oktober 2026</footer>
+<script>
+const questions=[
+  {
+    "q": "Albert Heijn zette op 18 oktober de website en de app weer live na het cyberincident bij Ahold Delhaize. Tot en met welke dag werden volgens die update alle online bestelde boodschappen geannuleerd?",
+    "options": [
+      "Zondag 18 oktober",
+      "Dinsdag 20 oktober",
+      "Donderdag 22 oktober",
+      "Zondag 25 oktober"
+    ],
+    "correct": 2,
+    "explanation": "In de update van 18 oktober schoof Albert Heijn de annuleringen op tot en met donderdag 22 oktober. Op 16 oktober ging het nog om bestellingen tot en met dinsdag 20 oktober. Wie al had betaald, krijgt het geld vanzelf terug. Volgens Albert Heijn was er toen geen aanwijzing dat persoonsgegevens betrokken waren."
+  },
+  {
+    "q": "Hoe compenseert Albert Heijn klanten van wie een online boodschappenbestelling werd geannuleerd door het cyberincident?",
+    "options": [
+      "Met een jaar gratis bezorgen",
+      "Met 10 euro shoptegoed",
+      "Met dubbele Air Miles",
+      "Met een cadeaukaart van 25 euro"
+    ],
+    "correct": 1,
+    "explanation": "Naast het terugbetalen van wat al was betaald, krijgen deze klanten 10 euro shoptegoed. Dat wordt automatisch verrekend zodra bestellen weer kan. Gemiste Air Miles worden automatisch bijgeschreven en gemiste koopzegels zijn met de kassabon alsnog in de winkel te kopen."
+  },
+  {
+    "q": "Welke websites haalde de Rechtspraak op 21 oktober uit voorzorg offline vanwege de kritieke lekken in PHP?",
+    "options": [
+      "Rechtspraak.nl en Mijn Rechtspraak",
+      "Werkenbijderechtspraak.nl en SSR.nl",
+      "Alle websites van de rechtbanken",
+      "Het Juridisch Loket en Rechtspraak.nl"
+    ],
+    "correct": 1,
+    "explanation": "Werkenbijderechtspraak.nl en SSR.nl (MijnSSR) draaien op PHP en gingen uit voorzorg offline, net als de bestandenpostbus met zittingsinformatie voor journalisten. Rechtspraak.nl en Mijn Rechtspraak gebruiken geen PHP en bleven gewoon beschikbaar."
+  },
+  {
+    "q": "Aan welke groep schrijft Microsoft het misbruik van de dienst Cloud Backup van ConnectWise toe?",
+    "options": [
+      "Storm-0940, gelieerd aan de Chinese staat",
+      "Diamond Sleet, gelieerd aan Noord-Korea",
+      "Forest Blizzard, gelieerd aan Rusland",
+      "Mint Sandstorm, gelieerd aan Iran"
+    ],
+    "correct": 0,
+    "explanation": "Volgens Microsoft gebruikte Storm-0940 de aanvalstool ARTEX, een opensource framework voor penetratietests dat met agents op basis van AI werkt. De groep probeerde daarna in te loggen bij meer dan 2.250 omgevingen. Microsoft benadrukt dat een geslaagde aanmelding niet vanzelf betekent dat klantgegevens zijn ingezien."
+  },
+  {
+    "q": "Russische hackers van APT28 drongen volgens Symantec binnen bij organisaties in twee lidstaten van de NAVO. Welk doelwit hoorde daarbij?",
+    "options": [
+      "Een ministerie van Defensie",
+      "Een fabrikant van munitie",
+      "Een militaire luchthaven",
+      "Een scheepsbouwer voor de marine"
+    ],
+    "correct": 3,
+    "explanation": "Doelwitten waren een organisatie voor rechtshandhaving, een scheepsbouwer voor de marine en een fabrikant van motoren voor militaire vliegtuigen. Bij de scheepsbouwer kwamen de aanvallers binnen via een Word document met een kwaadaardige macro, dat de achterdeur Hookedge installeerde. Welke landen en organisaties het betreft, maken de onderzoekers niet bekend."
+  },
+  {
+    "q": "Kaspersky beschrijft Operation FlashHole van de Noord-Koreaanse groep Lazarus. Welke software speelde vermoedelijk een rol bij de besmetting van Zuid-Koreaanse doelwitten?",
+    "options": [
+      "Een Koreaanse tekstverwerker voor kantoren",
+      "Een populaire chatapp voor bedrijven",
+      "Beheersoftware voor bouwprojecten",
+      "Beveiligingssoftware voor bankwebsites"
+    ],
+    "correct": 3,
+    "explanation": "Een bezoek aan een nagemaakte website op GitHub Pages startte vermoedelijk een infectieketen via CrossWeb EX, financiële beveiligingssoftware die in Zuid-Korea nodig is voor veel websites van banken en de overheid. Hoe de aanvallers die software precies misbruikten, is nog onduidelijk. Volgens Kaspersky is de campagne gericht op spionage."
+  },
+  {
+    "q": "Over de twee kritieke lekken in PHP ging een verkeerde CVSS score van 10.0 rond. Wat is de werkelijke score?",
+    "options": [
+      "9.0",
+      "9.1",
+      "9.2",
+      "9.8"
+    ],
+    "correct": 2,
+    "explanation": "De CVE nummers gingen een dag voor de release rond op fora en sociale media, met een verkeerde score van 10.0. De werkelijke score is 9.2 volgens CVSS v4.0. PHP bracht op 21 oktober updates uit in de versies 8.5.12, 8.4.27, 8.3.36 en 8.2.35. Alleen een beveiligingsupdate verhelpt de lekken volledig."
+  },
+  {
+    "q": "Onderzoeker Quentin Kaiser toonde een lek in de wificode van Broadcom waardoor Belgische routers op afstand over te nemen zijn. Bij welke provider schat hij het grootste aantal getroffen toestellen?",
+    "options": [
+      "Telenet",
+      "VOO",
+      "Orange Belgium",
+      "Proximus"
+    ],
+    "correct": 3,
+    "explanation": "Kaiser schat, met gemiddelde zekerheid, dat het gaat om 850.000 toestellen bij Proximus, 500.000 bij VOO en 210.000 bij Orange Belgium. Bij Telenet is het nog niet bevestigd. De fout zit volgens hem al sinds minstens 2010 in de softwareontwikkelkit van Broadcom, en Broadcom weigerde er een CVE nummer voor toe te kennen."
+  },
+  {
+    "q": "Wat kan het lek CVE-2026-113380 in RingRTC, de bibliotheek achter de gesprekken van Signal, mogelijk maken?",
+    "options": [
+      "Gesprekken ontsleutelen zonder de sleutel",
+      "Meeluisteren nadat iemand heeft opgehangen",
+      "Bellen namens het nummer van een ander",
+      "Bellen zonder dat de telefoon overgaat"
+    ],
+    "correct": 1,
+    "explanation": "Volgens het CVE record kan een gespreksdeelnemer die de interne wachtrij van een gesprek overbelast, verhinderen dat ophangen het gesprek volledig afbreekt. Volgens Malwarebytes raakt het lek de versleuteling van gesprekken niet. Wachtwoorden, accounts of berichtgeschiedenis zijn er niet bij betrokken. Het lek treft RingRTC versies ouder dan 2.72.0."
+  },
+  {
+    "q": "Welke certificaatautoriteit maakte op 22 oktober bekend vrijwillig te stoppen met haar wereldwijde activiteiten in SSL/TLS certificaten?",
+    "options": [
+      "Buypass",
+      "HARICA",
+      "eMudhra",
+      "Certum"
+    ],
+    "correct": 2,
+    "explanation": "De Indiase certificaatautoriteit eMudhra maakte dat besluit bekend kort nadat de private sleutels van acht van haar tussencertificaten zwak bleken, waarna onder andere Firefox en Chrome die certificaten blokkeerden. Voorzitter V. Srinivasan noemt onder meer dat deze activiteit maar een klein deel van de omzet is, terwijl kosten en complexiteit door eisen rond gegevenssoevereiniteit en naleving toenemen."
+  },
+  {
+    "q": "Een valse sms namens ING meldt dat je daglimiet is verhoogd en vraagt je direct een nummer te bellen. Wat is bij twijfel de veilige reactie?",
+    "options": [
+      "Het nummer uit de sms bellen",
+      "De link in de sms openen",
+      "De sms doorsturen naar je contacten",
+      "Zelf de ING Alarmlijn bellen"
+    ],
+    "correct": 3,
+    "explanation": "Het nummer in de sms is niet van ING. Wie belt, krijgt oplichters aan de lijn. Het officiële nummer van de ING Alarmlijn is 020 22 888 00. Wie twijfelt of een beller echt van ING is, kan ook de functie Check het Gesprek in de ING app gebruiken."
+  },
+  {
+    "q": "De besmette versie 1.107.0 van het Python pakket LiteLLM is volgens Socket, StepSecurity en Wiz gebouwd vanuit een nagemaakte repository. Waarin week die af van de echte?",
+    "options": [
+      "Eén extra koppelteken in de naam",
+      "Een nul in plaats van de letter o",
+      "Een andere hoofdletter in de naam",
+      "Een extra punt in de naam"
+    ],
+    "correct": 0,
+    "explanation": "De naam van de nagemaakte repository had een koppelteken tussen Berri en AI, de echte niet. De malware verzamelt onder meer wachtwoorden en cookies uit browsers, SSH sleutels en inloggegevens voor clouddiensten. Volgens StepSecurity doet wie de versie installeerde er goed aan alle sleutels, tokens en wachtwoorden te vervangen waar de machine bij kon."
+  },
+  {
+    "q": "Hoe verborgen de aanvallers achter GhostAction hun programma dat inloggegevens steelt in GitHub repositories?",
+    "options": [
+      "Als lettertypebestand in een map met fonts",
+      "Als afbeelding in de beschrijving van het project",
+      "Als testbestand in een map met tests",
+      "Als licentiebestand in de hoofdmap"
+    ],
+    "correct": 0,
+    "explanation": "Volgens OpenSourceMalware zat de stealer in een nagemaakt lettertypebestand, samen met een taak voor VS Code die automatisch start bij het openen van de map. Het ging om 94 repositories van 66 eigenaren. De stealer zoekt onder meer naar sleutels van AWS, tokens van npm en PyPI en SSH sleutels."
+  },
+  {
+    "q": "Een valse mail namens PostNL vraagt 1,93 euro om een pakket alsnog te ontvangen. Waaraan is deze mail onder meer te herkennen?",
+    "options": [
+      "Het afzenderadres eindigt niet op postnl.nl",
+      "De mail bevat geen logo van PostNL",
+      "De mail dreigt met een boete van de politie",
+      "De mail bevat geen volgcode"
+    ],
+    "correct": 0,
+    "explanation": "Het afzenderadres eindigt op quicknet.nl en de link leidt naar tr.ee, adressen die PostNL niet gebruikt. De mail misbruikt het oranje logo en bevat een volgcode, die echt kan zijn maar dan bij een zending van iemand anders hoort. Controleer de status zelf in de app of op de officiële website van PostNL."
+  },
+  {
+    "q": "Hoeveel verdachten van cybercriminaliteit werden aangehouden bij operatie Serengeti III van Interpol in Afrika?",
+    "options": [
+      "312",
+      "986",
+      "1.462",
+      "3.850"
+    ],
+    "correct": 2,
+    "explanation": "Politiediensten uit 21 landen, 20 Afrikaanse landen en de Verenigde Staten, hielden tussen 29 juni en 31 augustus 2026 in totaal 1.462 verdachten aan en verstoorden 10.909 kwaadaardige netwerken. Er werd ruim 105 miljoen dollar teruggehaald."
+  },
+  {
+    "q": "Een 26-jarige man kreeg van de rechtbank Limburg 42 maanden cel voor bankhelpdeskfraude. Welk programma lieten de fraudeurs de slachtoffers installeren?",
+    "options": [
+      "AnyDesk",
+      "Microsoft Teams",
+      "WhatsApp",
+      "Zoom"
+    ],
+    "correct": 0,
+    "explanation": "Met AnyDesk kregen de fraudeurs volledige controle over de computers van de slachtoffers en toegang tot hun bankrekeningen. De groep belde vooral ouderen en werkte vanuit vakantiehuisjes die als callcenter dienden. In het hele onderzoek zijn 156 slachtoffers geïdentificeerd, met een gezamenlijke schade van 1,6 miljoen euro."
+  },
+  {
+    "q": "Bij een nieuwe vorm van bankhelpdeskfraude hield de politie twee verdachten aan. Wat lieten de fraudeurs slachtoffers doen?",
+    "options": [
+      "Hun bankapp koppelen aan een tweede telefoon",
+      "Gegevens van hun NFC chip doorsturen",
+      "Een passkey aanmaken op een nepwebsite",
+      "Een QR code scannen bij een geldautomaat"
+    ],
+    "correct": 1,
+    "explanation": "De fraudeurs lieten slachtoffers de gegevens van de NFC chip van hun bankpas tijdelijk doorsturen naar een app van degene die het geld opnam. Daarbij gebruikten zij tientallen geluidsfragmenten die met AI waren gemaakt. In de drie weken dat het onderzoeksteam zicht had op de servers ging het om 380.000 euro schade bij zo'n 170 slachtoffers."
+  },
+  {
+    "q": "Wat oordeelde het gerechtshof Den Haag in een zaak over losgeld dat een logistiek bedrijf na een ransomwareaanval betaalde?",
+    "options": [
+      "Het bedrijf moet het losgeld zelf dragen",
+      "Het betalen van losgeld was strafbaar",
+      "De aanvallers moeten het losgeld terugbetalen",
+      "De verzekeraar moet het losgeld vergoeden"
+    ],
+    "correct": 3,
+    "explanation": "Het hof bekrachtigde op 13 oktober 2026 het vonnis van de rechtbank Rotterdam. De verzekeraar vergoedde een deel van de schade, maar weigerde het losgeld te vergoeden met een beroep op de sanctieclausule, omdat het geld volgens haar ten goede zou komen aan Evil Corp, een groep op de Amerikaanse sanctielijst. Volgens het hof waren bijna vier jaar verstreken zonder dat de Amerikaanse sanctiedienst OFAC sancties had opgelegd."
+  },
+  {
+    "q": "Tegen welk platform opende de Europese Commissie op 21 oktober een formele procedure onder de Digital Services Act, over fraude en phishing?",
+    "options": [
+      "Airbnb",
+      "Booking.com",
+      "Marktplaats",
+      "Vinted"
+    ],
+    "correct": 1,
+    "explanation": "De Commissie onderzoekt of Booking.com de risico's van frauduleuze advertenties voor accommodaties en van phishing met gegevens over reserveringen en gasten zorgvuldig heeft beoordeeld en beperkt. Het openen van de procedure is nog geen eindoordeel. De Commissie werkt samen met de Autoriteit Consument en Markt, de toezichthouder voor digitale diensten in Nederland, waar Booking.com is gevestigd."
+  },
+  {
+    "q": "Hoeveel Nederlanders hadden volgens een peiling onder 1.578 mensen, gepubliceerd door de Rijksoverheid, weleens spijt van een klik op een link, advertentie of bericht?",
+    "options": [
+      "Ruim 1 op de 10",
+      "Ruim 2 op de 10",
+      "Ruim 4 op de 10",
+      "Ruim 7 op de 10"
+    ],
+    "correct": 2,
+    "explanation": "Ruim 4 op de 10 Nederlanders heeft weleens klikspijt, terwijl 94 procent van de 1.578 ondervraagden weleens twijfelt aan een link, advertentie of bericht. De campagne Laat je niet interneppen roept op om drie tellen te nemen voor je klikt, reageert of betaalt."
+  }
+];questions.forEach(question=>{Object.freeze(question.options);Object.freeze(question)});Object.freeze(questions);
+let score=0,answered=0;const letters=['A','B','C','D'];
+function render(){const root=document.getElementById('quiz');root.innerHTML='';score=0;answered=0;update();questions.forEach((q,i)=>{const card=document.createElement('article');card.className='card';card.id='q'+i;card.innerHTML='<div class="number">Vraag '+(i+1)+' van '+questions.length+'</div><div class="question">'+q.q+'</div><div class="options">'+q.options.map((o,j)=>'<button class="option" id="q'+i+'o'+j+'" onclick="answer('+i+','+j+')"><span class="letter">'+letters[j]+'</span><span>'+o+'</span></button>').join('')+'</div><div class="feedback" aria-live="polite" id="fb'+i+'"></div>';root.appendChild(card)})}
+function answer(i,j){const q=questions[i],card=document.getElementById('q'+i);if(card.dataset.done)return;card.dataset.done='1';answered++;const ok=j===q.correct;if(ok)score++;q.options.forEach((_,k)=>{const el=document.getElementById('q'+i+'o'+k);el.classList.add('disabled');el.disabled=true;if(k===q.correct)el.classList.add('correct');if(k===j&&!ok)el.classList.add('wrong')});card.classList.add(ok?'good':'bad');const fb=document.getElementById('fb'+i);fb.className='feedback show '+(ok?'good':'bad');fb.textContent=(ok?'✓ Goed! ':'✗ Fout. ')+q.explanation;update();if(answered===questions.length)setTimeout(showResults,500)}
+function update(){document.getElementById('score').textContent=score;document.getElementById('answered').textContent=answered;document.querySelector('[role=progressbar]').setAttribute('aria-valuenow',answered);document.getElementById('progress').style.width=(answered/questions.length*100)+'%'}
+function showResults(){const r=document.getElementById('results');r.classList.add('show');document.getElementById('final').textContent=score+' / '+questions.length;document.getElementById('message').textContent=score===20?'Perfect, alle vragen goed!':score>=16?'Uitstekend, je bent goed op de hoogte.':score>=12?'Goed gedaan, veel onderwerpen zijn bekend.':'Lees de weekoverzichten nog eens terug en probeer opnieuw.';r.scrollIntoView({behavior:'smooth'})}
+function restartQuiz(){document.getElementById('results').classList.remove('show');render();scrollTo({top:0,behavior:'smooth'})}render();
+</script></body></html>
